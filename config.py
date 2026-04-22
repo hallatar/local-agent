@@ -3,11 +3,12 @@ from pathlib import Path
 
 LM_STUDIO_BASE_URL = os.getenv("LM_STUDIO_URL", "http://localhost:1234/v1")
 LM_STUDIO_API_KEY = "lm-studio"
-DEFAULT_MODEL = os.getenv("AGENT_MODEL", "qwen2.5-coder-7b-instruct")
+DEFAULT_MODEL = os.getenv("AGENT_MODEL", "llama3.3-8b-instruct-thinking-heretic-uncensored-claude-4.5-opus-high-reasoning-i1")
 
 MAX_ITERATIONS = 30
-MAX_TOKENS = 4096
+MAX_TOKENS = 2048  # Keep low so system prompt + history fits within n_ctx=4096
 TEMPERATURE = 0.1
+STREAM = True
 
 MCP_CONFIG_FILE = Path(__file__).parent / "mcp_servers.json"
 
